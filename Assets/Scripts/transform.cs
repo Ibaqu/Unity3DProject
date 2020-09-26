@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class transform : MonoBehaviour {
 
-    public GameObject gameObject_SphereYellow;
-    public GameObject gameObject_SphereGreen;
+    public GameObject gameObject_PlayerA;
+    public GameObject gameObject_PlayerB;
     public ParticleSystem particle_burst;
     
     // Start is called before the first frame update
     void Start()
     {
-        gameObject_SphereYellow.SetActive(true);
-        gameObject_SphereGreen.SetActive(false);
+        gameObject_PlayerA.SetActive(true);
+        gameObject_PlayerB.SetActive(false);
     }
 
     // Update is called once per frame
@@ -24,12 +24,12 @@ public class transform : MonoBehaviour {
             // Activate the particle system
             Boom();
             
-            if (gameObject_SphereYellow.activeSelf) {
-                gameObject_SphereYellow.SetActive(false);
-                gameObject_SphereGreen.SetActive(true);
+            if (gameObject_PlayerA.activeSelf) {
+                gameObject_PlayerA.SetActive(false);
+                gameObject_PlayerB.SetActive(true);
             } else {
-                gameObject_SphereYellow.SetActive(true);
-                gameObject_SphereGreen.SetActive(false);
+                gameObject_PlayerA.SetActive(true);
+                gameObject_PlayerB.SetActive(false);
             }
         }  
     }
